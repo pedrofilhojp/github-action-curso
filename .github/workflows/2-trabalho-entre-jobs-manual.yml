@@ -2,7 +2,7 @@ name: 2-trabalho-entre-jobs
 
 # Definindo o trigger
 on:
-  workflow_dispatch
+  workflow_dispatch 
 
 jobs:
   # Cada JOB roda em um ambiente direfente em PARALELO
