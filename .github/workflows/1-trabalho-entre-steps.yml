@@ -1,0 +1,21 @@
+name: Vendo arquivo compartilhados entre Steps
+
+# Definindo o trigger
+on:
+  push:
+    branches: main # Apenas será executado com "push" na "main"
+
+jobs:
+  # Cada JOB roda em um ambiente direfente
+  # Os steps do mesmo job compartilham informações
+  entre-steps:
+    runs-on: ubuntu-latest # Runner
+    steps: # Steps no mesmo JOB são executados em paralelo
+      - name: Confere versao do ubuntu
+        run: cat /etc/os-release
+      
+      - name: Escrever uma mensagem
+        run: echo "Primeiro workflow" > mensagem.txt
+
+      - name: Ler mensagem
+        run: cat mensagem.txt

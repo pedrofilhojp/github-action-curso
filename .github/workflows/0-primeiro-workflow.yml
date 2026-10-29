@@ -1,0 +1,20 @@
+name: Primeiro workflow
+
+# Definindo o trigger
+on:
+  workflow_dispatch # Permite que seja executado manualmente
+
+jobs:
+  # Cada JOB roda em um ambiente direfente
+  # Os steps do mesmo job compartilham informações
+  entre-steps:
+    runs-on: ubuntu-latest # Runner
+    steps: # Steps no mesmo JOB são executados em paralelo
+      - name: Confere versao do ubuntu
+        run: cat /etc/os-release
+      
+      - name: Escrever uma mensagem
+        run: echo "Primeiro workflow" > mensagem.txt
+
+      - name: Ler mensagem
+        run: cat mensagem.txt
