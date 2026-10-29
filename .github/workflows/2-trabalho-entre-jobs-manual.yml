@@ -19,8 +19,22 @@ jobs:
       - name: Ler mensagem
         run: cat mensagem.txt
 
+      - uses: actions/upload-artifact@v4 # Copia o arquivo mensagem.txt
+        with:
+            name: diretorio_x
+            path: mensagem.txt
+
+
   job2:
     runs-on: ubuntu-latest # Runner
     steps:
       - name: Ver exite message.txt
         run: ls -la
+
+      - uses: actions/download-artifact@v4 # Copia o arquivo mensagem.txt
+        with:
+            name: diretorio_x
+            path: mensagem.txt
+      
+      - name: Ver denovo exite message.txt
+        run: ls -la; ls -la diretorio_x
