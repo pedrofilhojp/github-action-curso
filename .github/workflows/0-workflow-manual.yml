@@ -1,4 +1,4 @@
-name: Primeiro workflow
+name: workflow manual
 
 # Definindo o trigger
 on:
