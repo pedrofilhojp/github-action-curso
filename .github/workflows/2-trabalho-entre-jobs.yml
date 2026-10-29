@@ -1,4 +1,4 @@
-name: Vendo arquivo compartilhados entre Steps
+name: 2-trabalho-entre-jobs
 
 # Definindo o trigger
 on:
