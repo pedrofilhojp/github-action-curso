@@ -5,16 +5,16 @@ on:
   workflow_dispatch
 
 jobs:
-  # Cada JOB roda em um ambiente direfente
+  # Cada JOB roda em um ambiente direfente em PARALELO
   # Os steps do mesmo job compartilham informações
   job1:
     runs-on: ubuntu-latest # Runner
-    steps: # Steps no mesmo JOB são executados em paralelo
+    steps: # Steps no mesmo JOB são executados em SEQUENCIA
       - name: Confere versao do ubuntu
         run: cat /etc/os-release
       
       - name: Escrever uma mensagem
-        run: echo "Primeiro workflow" > mensagem.txt
+        run: echo "Primeiro workflow" > ${{ github.workspace }}/mensagem.txt
 
       - name: Ler mensagem
         run: cat mensagem.txt
