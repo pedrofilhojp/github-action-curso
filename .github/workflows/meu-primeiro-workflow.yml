@@ -2,9 +2,8 @@ name: Primeiro workflow
 
 # Definindo o trigger
 on:
-  push
-    branches:
-      - main
+  push:
+    branches: main
 
 jobs:
   giropops:
