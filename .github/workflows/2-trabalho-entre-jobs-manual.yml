@@ -27,6 +27,7 @@ jobs:
 
   job2:
     runs-on: ubuntu-latest # Runner
+    needs: job1   # Dependência
     steps:
       - name: Ver exite message.txt
         run: ls -la
